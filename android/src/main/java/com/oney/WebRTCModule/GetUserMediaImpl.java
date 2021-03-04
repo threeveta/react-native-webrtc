@@ -325,9 +325,9 @@ class GetUserMediaImpl {
         Log.d(TAG, "xdpi: " + displayMetrics.xdpi);
         Log.d(TAG, "ydpi: " + displayMetrics.ydpi);
         Log.d(TAG, "densityDpi: " + displayMetrics.densityDpi);
-        double quality = 1.0;
-        if (displayMetrics.densityDpi > 100) {
-            quality = 1.0 - (displayMetrics.densityDpi / 1000);
+        float quality = 1;
+        if (displayMetrics.densityDpi > 120) {
+            quality = 1.0f - ((float)displayMetrics.densityDpi / 1000f);
         }
         Log.d(TAG, "quality: " + quality);
         int width = (int) (displayMetrics.widthPixels * quality);
