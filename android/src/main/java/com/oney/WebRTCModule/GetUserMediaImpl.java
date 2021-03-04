@@ -332,6 +332,10 @@ class GetUserMediaImpl {
         Log.d(TAG, "quality: " + quality);
         int width = (int) (displayMetrics.widthPixels * quality);
         int height = (int) (displayMetrics.heightPixels * quality);
+        Log.d(TAG, "displayMetrics.widthPixels: " + displayMetrics.widthPixels);
+        Log.d(TAG, "displayMetrics.heightPixels: " + displayMetrics.heightPixels);
+        Log.d(TAG, "width: " + width);
+        Log.d(TAG, "height: " + height);
         int fps = 30;
         ScreenCaptureController screenCaptureController = new ScreenCaptureController(width, height, fps, mediaProjectionPermissionResultData);
         return createVideoTrack(screenCaptureController);
