@@ -322,20 +322,12 @@ class GetUserMediaImpl {
 
     private VideoTrack createScreenTrack() {
         DisplayMetrics displayMetrics = getDisplayMetrics();
-        Log.d(TAG, "xdpi: " + displayMetrics.xdpi);
-        Log.d(TAG, "ydpi: " + displayMetrics.ydpi);
-        Log.d(TAG, "densityDpi: " + displayMetrics.densityDpi);
         float quality = 1;
         if (displayMetrics.densityDpi > 120) {
-            quality = 0.9f - ((float)displayMetrics.densityDpi / 1000f);
+            quality = 0.95f - ((float)displayMetrics.densityDpi / 1000f);
         }
-        Log.d(TAG, "quality: " + quality);
         int width = (int) (displayMetrics.widthPixels * quality);
         int height = (int) (displayMetrics.heightPixels * quality);
-        Log.d(TAG, "displayMetrics.widthPixels: " + displayMetrics.widthPixels);
-        Log.d(TAG, "displayMetrics.heightPixels: " + displayMetrics.heightPixels);
-        Log.d(TAG, "width: " + width);
-        Log.d(TAG, "height: " + height);
         int fps = 30;
         ScreenCaptureController screenCaptureController = new ScreenCaptureController(width, height, fps, mediaProjectionPermissionResultData);
         return createVideoTrack(screenCaptureController);
