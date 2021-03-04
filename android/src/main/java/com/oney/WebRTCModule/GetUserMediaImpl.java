@@ -322,8 +322,8 @@ class GetUserMediaImpl {
 
     private VideoTrack createScreenTrack() {
         DisplayMetrics displayMetrics = getDisplayMetrics();
-        int width = (int) (displayMetrics.widthPixels / displayMetrics.xdpi);
-        int height = (int) (displayMetrics.heightPixels / displayMetrics.ydpi);
+        int width = (int) (displayMetrics.widthPixels / (displayMetrics.xdpi / 100));
+        int height = (int) (displayMetrics.heightPixels / (displayMetrics.ydpi / 100));
         int fps = 30;
         ScreenCaptureController screenCaptureController = new ScreenCaptureController(width, height, fps, mediaProjectionPermissionResultData);
         return createVideoTrack(screenCaptureController);
