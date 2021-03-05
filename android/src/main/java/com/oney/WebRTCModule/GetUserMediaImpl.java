@@ -324,7 +324,7 @@ class GetUserMediaImpl {
         DisplayMetrics displayMetrics = getDisplayMetrics();
         float quality = 1;
         if (displayMetrics.densityDpi > 120) {
-            quality = 0.80f - ((float)displayMetrics.densityDpi / 1000f);
+            quality = 0.85f - ((float)displayMetrics.densityDpi / 1000f);
         }
         int width = (int) (displayMetrics.widthPixels * quality);
         int height = (int) (displayMetrics.heightPixels * quality);
